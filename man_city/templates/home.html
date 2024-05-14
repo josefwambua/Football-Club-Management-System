@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manchester City Fc</title>
+    <link rel="stylesheet" href="{% static 'Css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="{% static 'Images/crest.svg ' %}" alt="Logo" class="logo" />
+      <a href="#home">Home</a>
+      <a href="#football-clubs">Football Clubs</a>
+      <a href="#ceos">CEO</a>
+      <a href="#contributors">Contributors</a>
+      <a href="#coaches">Coaches</a>
+      <a href="#players">Players</a>
+      <a href="#fans">Fans</a>
+    </div>
+
+    <div class="container" id="home">
+      <h1>Welcome to Manchester City Football Club</h1>
+      <!-- Add content here -->
+    </div>
+
+    <div class="container" id="ceos">
+      <h1>CEO</h1>
+      <div class="grid">
+        {% for ceo in ceos %}
+        <div class="ceo-card">
+          <h2>{{ ceo.name }}</h2>
+          <p>Age: {{ ceo.age }}</p>
+          <p>Club: {{ ceo.club }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="container" id="contributors">
+      <h1>Contributors</h1>
+      <div class="grid">
+        {% for contributor in contributors %}
+        <div class="contributor-card">
+          <h2>{{ contributor.name }}</h2>
+          <p>Role: {{ contributor.role }}</p>
+          <p>Age: {{ contributor.age }}</p>
+          <p>Club: {{ contributor.club }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="container" id="coaches">
+      <h1>Coaches</h1>
+      <div class="grid">
+        {% for coach in coaches %}
+        <div class="coach-card">
+          <h2>{{ coach.name }}</h2>
+          <p>Role: {{ coach.role }}</p>
+          <p>Age: {{ coach.age }}</p>
+          <p>Club: {{ coach.club }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    
+    <div class="container" id="players">
+      <h1>Players</h1>
+      <div class="grid">
+        {% for player in players %}
+        <div class="player-card">
+          <h2>{{ player.name }}</h2>
+          <p>Position: {{ player.position }}</p>
+          <p>Age: {{ player.age }}</p>
+          <p>Club: {{ player.club }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="container" id="fans">
+      <h1>Fans</h1>
+      <div class="grid">
+        {% for fan in fans %}
+        <div class="fan-card">
+          <h2>{{ fan.name }}</h2>
+          <p>Age: {{ fan.age }}</p>
+          <p>Club: {{ fan.club }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <br>
+
+    <div class="footer">
+      <p>&copy; 2024 Football Club. All rights reserved. <a href="github.com/josefWambua">Created by JosefWambua</a></p>
+  </div>
+  </body>
+</html>
